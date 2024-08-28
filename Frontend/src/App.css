@@ -1,0 +1,357 @@
+
+/* App.css */
+
+/* Ensure the whole page is at least the height of the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* The container should take up at least the full height of the viewport */
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content should expand to take up available space */
+#content {
+  flex: 1;
+  padding: 2rem;
+}
+
+#bottom-bar {
+  background-color: #485b7c; /* Chakra UI gray.800 */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 2px;
+  position: sticky;
+  bottom: 0;
+  max-width: calc(100% - 250px); /* Subtracting the width of the sidebar */
+  margin-left: auto; /* Align it to the right */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* Global styles for better appearance */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7fafc; /* Light gray background */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#content {
+  flex: 1;
+  padding: 30px;
+  max-width: 100%; /* Ensure it does not exceed viewport width */
+  margin: 0 auto; /* Center the container */
+}
+
+#bottom-bar {
+  background-color: #485b7c; /* Chakra UI gray.800 */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+button[role="button"] {
+  transition: background-color 0.3s ease;
+  border-radius: 14px;
+}
+
+#ask-question-button {
+  background-color: #3182ce; /* Chakra UI blue.500 */
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 8px 16px; /* Adjusted padding for better visibility */
+  margin-left: 10px; /* Space between input and button */
+}
+
+#ask-question-button:hover {
+  background-color: #2b6cb0; /* Chakra UI blue.600 */
+}
+
+#summarize-button {
+  background-color: #3182ce; /* Chakra UI blue.500 */
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 8px 16px; /* Consistent padding with Get Answer button */
+}
+
+#summarize-button:hover {
+  background-color: #2b6cb0; /* Chakra UI blue.600 */
+}
+
+#ask-question-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e0; /* Chakra UI gray.300 */
+  margin-right: 10px; /* Space between input and button */
+}
+
+#upload-button {
+  width: 100%;
+}
+
+.summary-box,
+.qa-box {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ffffff; /* White background for summary and QA boxes */
+  border: 1px solid #e2e8f0; /* Light border for summary and QA boxes */
+  overflow-x: auto; /* Allow horizontal scroll if content overflows */
+}
+
+.summary-box pre,
+.qa-box pre {
+  white-space: pre-wrap; /* Wrap long lines of text */
+  word-wrap: break-word; /* Break long words */
+}
+
+#ask-question-container {
+  margin-top: 20px;
+}
+
+/* Updated Navbar Styling */
+.navbar {
+     /* Chakra UI teal.600 */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #2b6cb0; /* Add a border to separate the navbar */
+}
+
+.navbar a {
+ /* Ensure links are white */
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+
+
+.login-button {
+  background-color: #2b6cb0; /* Chakra UI blue.600 */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2c5282; /* Darker blue on hover */
+}
+
+.navbar .login-button {
+  margin-left: auto; /* Pushes the login button to the right */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .login-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+
+/* Center the form on the page */
+#login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+/* Form styles */
+form {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e2e8f0; /* Light gray border */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styles */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e0; /* Chakra UI gray.300 */
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Button styles */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3182ce; /* Chakra UI blue.500 */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #2b6cb0; /* Chakra UI blue.600 */
+}
+
+/* Link styles */
+form p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form a {
+  color: #3182ce; /* Chakra UI blue.500 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+/* App.css */
+
+.navbar-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#content {
+  flex: 1;
+  padding: 2rem;
+}
+
+#bottom-bar {
+  padding: 1rem;
+  background-color: var(--bottom-bar-bg);
+}
+
+.upload-button {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+.upload-button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+#summarize-button {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+#ask-question-button {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+}
+
+:root {
+  --background-color: white;
+  --text-color: black;
+  --navbar-bg: #333;
+  --navbar-link-color: #fff;
+  --button-bg: #007bff;
+  --button-color: #fff;
+  --button-hover-bg: #0056b3;
+  --bottom-bar-bg: #444;
+}
+
+[data-theme="dark"] {
+  --background-color: #333;
+  --text-color: white;
+  --navbar-bg: #444;
+  --navbar-link-color: #ccc;
+  --button-bg: #0056b3;
+  --button-color: #fff;
+  --button-hover-bg: #003366;
+  --bottom-bar-bg: #222;
+}
+
+[data-theme="light"] {
+  --background-color: white;
+  --text-color: black;
+  --navbar-bg: #fff;
+  --navbar-link-color: #000;
+  --button-bg: #007bff;
+  --button-color: #fff;
+  --button-hover-bg: #0056b3;
+  --bottom-bar-bg: #f8f9fa;
+}
+
+
+.sidebar {
+  position: fixed; /* Fix the sidebar in place */
+  top: 0;          /* Align to the top of the viewport */
+  left: 0;         /* Align to the left of the viewport */
+  height: 100vh;   /* Full height of the viewport */
+  width: 10px;    /* Fixed width of the sidebar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced between top and bottom */
+  padding: 10px;
+  background-color: #2D3748; /* Match your existing color */
+  z-index: 1000; /* Ensure it stays on top of other content */
+}
